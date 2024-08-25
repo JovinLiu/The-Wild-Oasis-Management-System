@@ -21,6 +21,7 @@ function CreateCabinForm({ cabin = {}, id, onCloseModal }) {
     reset,
   } = useForm({ defaultValues: cabin });
 
+  //customHooks
   const { createCabin, isCreating } = useCreateCabin();
   const { updateCabin, isEditing } = useUpdateCabin();
   const isWorking = isCreating || isEditing;
