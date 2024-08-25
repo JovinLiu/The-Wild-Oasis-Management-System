@@ -72,7 +72,7 @@ function Modal({ children }) {
 
 //2.第一个children component，children是按钮，他的作用是在compound内部实现了onClick时将openCode传给open方程，改变openName方便下面对暗号，
 function Open({ children, openCode }) {
-  const { open } = useContext(ModalContext);
+  const { open } = ModalContext;
 
   return cloneElement(children, {
     onClick: () => open(openCode),
@@ -97,6 +97,7 @@ function Window({ children, verifyCode }) {
         {cloneElement(children, { onCloseModal: close })}
       </StyledModal>
     </Overlay>,
+    //可以是under任何地方，比如通过document.querySelector()
     document.body
   );
 }

@@ -27,6 +27,7 @@ function UpdateSettingsForm() {
     toast.error(error.message);
   }
 
+  //[field]动态检索对象的key
   function handleSettingChange(value, field) {
     updateSetting({ [field]: value });
   }
