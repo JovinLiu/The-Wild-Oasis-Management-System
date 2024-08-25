@@ -83,6 +83,7 @@ export async function createEditCabin(cabin) {
       //这里要提供上传图片的名称和文件本身
       .upload(imageName, image[0]);
 
+    //如果有上传文件错误，删除之前的document
     if (storageError) {
       const { deleteError } = await supabase
         .from("cabins")
