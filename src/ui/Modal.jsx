@@ -72,7 +72,7 @@ function Modal({ children }) {
 
 //2.第一个children component，children是按钮，他的作用是在compound内部实现了onClick时将openCode传给open方程，改变openName方便下面对暗号，
 function Open({ children, openCode }) {
-  const { open } = ModalContext;
+  const { open } = useContext(ModalContext);
 
   return cloneElement(children, {
     onClick: () => open(openCode),
