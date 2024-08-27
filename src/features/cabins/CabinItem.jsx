@@ -76,7 +76,7 @@ function CabinItem({ cabin }) {
         <span>&mdash;</span>
       )}
       {/* 1.首先要在table body添加Menus，因为要对整个表格提供state，才能验证哪一个下拉菜单打开了 */}
-      {/* 2.需要在每一行提供Modal，要给这一行提供state，并且来检测这一行是哪个窗口（编辑还是删除）打开了 */}
+      {/* 2.需要在每一个CabinItem提供Modal，要给这一行提供state，并且来检测这一个CabinItem是哪个窗口（编辑还是删除）打开了 */}
       <Modal>
         {/* Menus.Menu只提供样式 */}
         <Menus.Menu>
