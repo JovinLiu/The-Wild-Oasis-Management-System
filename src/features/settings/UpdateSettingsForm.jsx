@@ -12,8 +12,8 @@ import styled from "styled-components";
 const Container = styled.div`
   margin-left: auto;
   width: 12rem;
-  opacity: 0%;
   position: relative;
+  visibility: hidden;
 `;
 
 function UpdateSettingsForm() {
