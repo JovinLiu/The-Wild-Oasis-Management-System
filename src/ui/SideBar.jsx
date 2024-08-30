@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
-import Uploader from "../data/Uploader";
 
 //侧栏使用aside tag
 const StyledSideBar = styled.aside`
@@ -19,7 +18,6 @@ function SideBar() {
     <StyledSideBar>
       <Logo />
       <MainNav />
-      <Uploader />
     </StyledSideBar>
   );
 }

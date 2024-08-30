@@ -47,7 +47,8 @@ function UpdatePasswordForm() {
           type="password"
           autoComplete="new-password"
           id="passwordConfirm"
-          disabled={isUpdating}
+          disabled={true}
+          placeholder="Disabled for Presentation Purpose"
           {...register("passwordConfirm", {
             required: "This field is required",
             validate: (value) =>
