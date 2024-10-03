@@ -11,8 +11,8 @@ import SpinnerMini from "../../ui/SpinnerMini";
 
 function LoginForm() {
   //Variables and Hooks
-  const [email, setEmail] = useState("example@example.com");
-  const [password, setPassword] = useState("testtest");
+  const [email, setEmail] = useState("liujovin@gmail.com");
+  const [password, setPassword] = useState("pass1234");
   const { login, isLoading } = useLogin();
   //Handlers
   //NOTE:用户是如果登陆进去的？？？登陆分为两部authentication和autherizaiton
