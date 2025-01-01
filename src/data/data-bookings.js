@@ -2,7 +2,7 @@ import { add } from "date-fns";
 
 function fromToday(numDays, withTime = false) {
   const date = add(new Date(), { days: numDays });
-  if (!withTime) date.setUTCHours(0, 0, 0, 0);
+  if (!withTime) date.setUTCHours(12, 0, 0, 0);
   return date.toISOString().slice(0, -1);
 }
 
@@ -10,7 +10,7 @@ export const bookings = [
   // CABIN 001
   {
     created_at: fromToday(-20, true),
-    startDate: fromToday(0.5),
+    startDate: fromToday(0),
     endDate: fromToday(7),
     cabinId: 1,
     guestId: 2,
@@ -93,7 +93,7 @@ export const bookings = [
   {
     created_at: fromToday(-2, true),
     startDate: fromToday(-2),
-    endDate: fromToday(0.5),
+    endDate: fromToday(0),
     cabinId: 3,
     guestId: 9,
     hasBreakfast: false,
@@ -186,7 +186,7 @@ export const bookings = [
   // CABIN 006
   {
     created_at: fromToday(-3, true),
-    startDate: fromToday(0.5),
+    startDate: fromToday(0),
     endDate: fromToday(11),
     cabinId: 6,
     guestId: 17,
@@ -258,7 +258,7 @@ export const bookings = [
   {
     created_at: fromToday(-8, true),
     startDate: fromToday(-5),
-    endDate: fromToday(0.5),
+    endDate: fromToday(0),
     cabinId: 8,
     guestId: 1,
     hasBreakfast: true,
@@ -269,7 +269,7 @@ export const bookings = [
   },
   {
     created_at: fromToday(0, true),
-    startDate: fromToday(0.5),
+    startDate: fromToday(0),
     endDate: fromToday(5),
     cabinId: 8,
     guestId: 23,
