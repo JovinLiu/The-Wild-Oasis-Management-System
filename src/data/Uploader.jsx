@@ -25,7 +25,7 @@ async function deleteCabins() {
   if (error) console.log(error.message);
 }
 
-async function deleteBookings() {
+export async function deleteBookings() {
   const { error } = await supabase.from("bookings").delete().gt("id", 0);
   if (error) console.log(error.message);
 }
@@ -40,7 +40,7 @@ async function createCabins() {
   if (error) console.log(error.message);
 }
 
-async function createBookings() {
+export async function createBookings() {
   // Bookings need a guestId and a cabinId. We can't tell Supabase IDs for each object, it will calculate them on its own. So it might be different for different people, especially after multiple uploads. Therefore, we need to first get all guestIds and cabinIds, and then replace the original IDs in the booking data with the actual ones from the DB
   const { data: guestsIds } = await supabase
     .from("guests")

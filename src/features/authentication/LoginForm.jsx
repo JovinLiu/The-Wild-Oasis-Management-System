@@ -1,11 +1,12 @@
 //Import
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import useLogin from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
+import { createBookings, deleteBookings } from "../../data/Uploader";
 //Styles
 //functions outside of Component
 
@@ -14,6 +15,16 @@ function LoginForm() {
   const [email, setEmail] = useState("liujovin@gmail.com");
   const [password, setPassword] = useState("pass1234");
   const { login, isLoading } = useLogin();
+
+  useEffect(() => {
+    async function updateBooking() {
+      await deleteBookings();
+      await createBookings();
+    }
+
+    updateBooking();
+  }, []);
+
   //Handlers
   //NOTE:用户是如果登陆进去的？？？登陆分为两部authentication和autherizaiton
   function handleSubmit(e) {
