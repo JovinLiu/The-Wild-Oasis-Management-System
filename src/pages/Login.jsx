@@ -16,9 +16,6 @@ const LoginLayout = styled.main`
 `;
 //functions outside of Component
 function Login() {
-  //Variables and Hooks
-  //Handlers
-  //JSX
   return (
     <LoginLayout>
       <Logo />

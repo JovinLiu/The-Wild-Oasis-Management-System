@@ -6,7 +6,7 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import useLogin from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { createBookings, deleteBookings } from "../../data/Uploader";
+import { deleteBookings, createBookings } from "../../data/Uploader";
 //Styles
 //functions outside of Component
 
@@ -25,9 +25,7 @@ function LoginForm() {
     const user = { email, password };
     //NOTE:1.这里调用了login，把email和password传到了login中
     login(user, {
-      onSettled: async () => {
-        await deleteBookings();
-        await createBookings();
+      onSettled: () => {
         setEmail("");
         setPassword("");
       },
