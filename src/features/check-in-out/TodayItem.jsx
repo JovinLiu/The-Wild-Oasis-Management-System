@@ -24,14 +24,10 @@ const Guest = styled.div`
   font-weight: 500;
 `;
 
-//Import
-//Styles
-//functions outside of Component
 function TodayItem({ activity }) {
+  console.log(activity);
   const { id, status, guests, numNights } = activity;
-  //Variables and Hooks
-  //Handlers
-  //JSX
+
   return (
     <StyledTodayItem>
       {activity.status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
