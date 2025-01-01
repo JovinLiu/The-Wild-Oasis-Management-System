@@ -1,5 +1,5 @@
 //Import
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import Input from "../../ui/Input";
@@ -16,24 +16,18 @@ function LoginForm() {
   const [password, setPassword] = useState("pass1234");
   const { login, isLoading } = useLogin();
 
-  useEffect(() => {
-    async function updateBooking() {
-      await deleteBookings();
-      await createBookings();
-    }
-
-    updateBooking();
-  }, []);
-
   //Handlers
   //NOTE:用户是如果登陆进去的？？？登陆分为两部authentication和autherizaiton
   function handleSubmit(e) {
     e.preventDefault();
+
     if (!email || !password) return;
     const user = { email, password };
     //NOTE:1.这里调用了login，把email和password传到了login中
     login(user, {
-      onSettled: () => {
+      onSettled: async () => {
+        await deleteBookings();
+        await createBookings();
         setEmail("");
         setPassword("");
       },
